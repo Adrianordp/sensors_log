@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sensors_log"
+version = "0.0.1"
+dependencies = ["matplotlib", "black", "isort", "pytest"]
+
+[project.scripts]
+sensors_log = "sensors_log.__main__:main"
+sensors_log_plot = "sensors_log.__main__:plot_log"
+
+[tool.black]
+line-length = 80
+
+[tool.isort]
+profile = "black"
+line_length = 80
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
+testpaths = ["tests"]
